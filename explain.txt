@@ -1,0 +1,13 @@
+Basics of => HTML and different tags/elements of HTML
+Basic of => CSS and how apply CSS 
+Basic of => Javascript => 
+        variables
+        function
+        array
+        jsObject
+        different operator's
+
+ES => ECMA Script
+ES5 => 2005
+ES6 => 2015 
+
