@@ -1,0 +1,88 @@
+# states and props
+# lifecycle in react
+# forms (product mang)
+# routing
+
+# let keyword to init a variable
+# let block scope
+# let only declare variable once for a block
+
+# in jsx for dynamic code we use JSX expression i.e => {}
+
+// Parent to child ==> props / property( unidirectional )
+// props => {} (collection of property)
+// Not able Change value of props inside child
+
+// App is Parent
+
+//What is we handel data inside a component ==> States
+// State ==> object i.e {}
+// States (Data) Changes ==> Component Rerender (Refresh)
+
+// FC don't have default state
+// FC are state less
+
+
+Class Component (state) < React v16.8 > FC (state) (hooks)
+
+handel a complex logic like class component ==> Hooks
+Hooks React Methods ==> every hooks "use"
+
+useState to handel state in FC
+we can't use hooks in class component
+
+react devtool
+redux devtool
+css debugger
+
+application product management
+    add a product
+        id,
+        title,
+        price,
+        description,
+        category,
+        image (auto),
+        rating
+            rate (0 - 5)
+            rateCount
+    edit a product
+    delete product
+    print product list
+
+# print data in loop/iteration ==> map of array
+# array => push , splice , slice , find, filter, map , reduce, sort , every , some , includes, foreach
+
+Work with a any comp
+React Lifecycle Comp
+# initialization 
+# load ==> mounting 
+# update ==> updating
+# unloaded ==> unmounting 
+
+// onload you want call a server data (api call) or make some changes
+// update  you want call a server data (api call) or make some changes
+// unmounting  you want call a server data (api call) or make some changes reset some data
+
+class comp
+    init ==> render ==> mounting  call server data
+    constructor => only once
+    render => on state change
+    componentDidMount* => only once
+    componentDidUpdate* => every comp update
+    componentWillUnmount* => only once
+    getDerivedStateFromProps(static)* only once
+
+
+FC ==> we a hook (method) ==> useEffect( cbFn , []) ==> [] (dependency list)
+    # initialization ==> fun call
+    # load ==> mounting ==> useEffect( cbFn , [])
+    # update ==> updating ==> useEffect(cbFn ) or  useEffect(cbFn , [dependency]) => dependency are state
+    # unloaded ==> unmounting ==> useEffect(()=>{   return ()=>{ unmounting} } , [])
+
+react use for SPA ( react-router-dom (v6.9) )
+flipkart.com/product
+flipkart.com/product#value (hash value)
+flipkart.com/product?key=value (query string)
+flipkart.com/product/1 or flipkart.com/product/2 (params)
+ 

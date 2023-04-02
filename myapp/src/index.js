@@ -5,9 +5,9 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("edureka-react")); // react v18
 root.render(
-  <React.StrictMode>
+  <React.Fragment>
     <App />
-  </React.StrictMode>
+  </React.Fragment>
 );
 // render ==> inject our code to Browser DOM
 // VDOM => react :: logical virtual tree created for react app
