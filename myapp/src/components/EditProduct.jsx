@@ -1,33 +1,21 @@
-import { useState } from "react";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const AddProduct = (props) => {
-  let { newProduct, inputText, saveProduct } = props;
-  let [count, setCount] = useState(0);
+const EditProduct = (props) => {
+  let { id } = useParams();
+  let { newProduct, inputText, updateProduct, setEditData } = props;
+
+  // onload load
   useEffect(() => {
-    // console.log("mounting");
-    // run only once
-
-    return () => {
-      // console.log("fc ---> unmounting");
-    };
-  }, []);
-
-  //   useEffect(() => {
-  //     console.log("for any state change updating");
-  //   });
-
-  useEffect(() => {
-    // console.log("only one count updating");
-  }, [count]);
+    setEditData(id);
+  }, []); // run once when component load
   return (
     <>
       {/* add product */}
 
       <center>
-        <button onClick={() => setCount(++count)}>Count {count}</button>
-        <h1>Add Product</h1>
-        <form onSubmit={saveProduct}>
+        <h1>Edit Product</h1>
+        <form onSubmit={updateProduct}>
           <div>
             <label htmlFor="">Name</label>
             <input
@@ -58,11 +46,11 @@ const AddProduct = (props) => {
               onChange={inputText}
             ></textarea>
           </div>
-          <button>Save Product</button>
+          <button>Update Product</button>
         </form>
       </center>
     </>
   );
 };
 
-export default AddProduct;
+export default EditProduct;

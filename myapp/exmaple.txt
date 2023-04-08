@@ -85,4 +85,18 @@ flipkart.com/product
 flipkart.com/product#value (hash value)
 flipkart.com/product?key=value (query string)
 flipkart.com/product/1 or flipkart.com/product/2 (params)
+
+components 
+    BrowserRouter,
+    Routes,
+    Route (path="/" element="component"),
+    Navigate ==> JSX,
+    Outlet,
+    Link,
+    NavLink,
+    
+hooks
+    useParams,
+    useSearchParams,
+    useNavigate ==> redirect user with javascript,
  
