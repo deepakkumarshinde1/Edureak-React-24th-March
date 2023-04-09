@@ -1,31 +1,30 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { prInputText, prSaveProduct } from "../redux/ProductReducerSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const AddProduct = (props) => {
-  let { newProduct, inputText, saveProduct } = props;
-  let [count, setCount] = useState(0);
-  useEffect(() => {
-    // console.log("mounting");
-    // run only once
+const AddProduct = () => {
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+  let { newProduct } = useSelector((state) => state.product); // get state data
 
-    return () => {
-      // console.log("fc ---> unmounting");
-    };
-  }, []);
+  let inputText = (event) => {
+    let { value, name } = event.target;
+    dispatch(prInputText({ value, name })); // payload:{ value, name }
+  };
 
-  //   useEffect(() => {
-  //     console.log("for any state change updating");
-  //   });
+  let saveProduct = (event) => {
+    // prevent default form submission
+    event.preventDefault();
+    dispatch(prSaveProduct());
+    // navigate to product list
+    navigate("/product/view");
+  };
 
-  useEffect(() => {
-    // console.log("only one count updating");
-  }, [count]);
   return (
     <>
       {/* add product */}
 
       <center>
-        <button onClick={() => setCount(++count)}>Count {count}</button>
         <h1>Add Product</h1>
         <form onSubmit={saveProduct}>
           <div>

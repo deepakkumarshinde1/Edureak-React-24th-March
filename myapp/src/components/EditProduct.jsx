@@ -1,13 +1,31 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  prEditInputText,
+  prSetEditData,
+  prUpdateProduct,
+} from "../redux/ProductReducerSlice";
 
-const EditProduct = (props) => {
+const EditProduct = () => {
   let { id } = useParams();
-  let { newProduct, inputText, updateProduct, setEditData } = props;
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+  let { editProduct } = useSelector((state) => state.product);
 
+  let editInputText = (event) => {
+    let { value, name } = event.target;
+    dispatch(prEditInputText({ value, name }));
+  };
+
+  let updateProduct = (event) => {
+    event.preventDefault();
+    dispatch(prUpdateProduct());
+    navigate("/");
+  };
   // onload load
   useEffect(() => {
-    setEditData(id);
+    dispatch(prSetEditData(id));
   }, []); // run once when component load
   return (
     <>
@@ -22,8 +40,8 @@ const EditProduct = (props) => {
               type="text"
               placeholder="Enter Product Name"
               name="title"
-              value={newProduct.title}
-              onChange={inputText}
+              value={editProduct.title}
+              onChange={editInputText}
             />
           </div>
           <div>
@@ -32,8 +50,8 @@ const EditProduct = (props) => {
               type="text"
               placeholder="Enter Product price"
               name="price"
-              value={newProduct.price}
-              onChange={inputText}
+              value={editProduct.price}
+              onChange={editInputText}
             />
           </div>
           <div>
@@ -42,8 +60,8 @@ const EditProduct = (props) => {
               type="text"
               placeholder="Enter Product Details"
               name="desc"
-              value={newProduct.desc}
-              onChange={inputText}
+              value={editProduct.desc}
+              onChange={editInputText}
             ></textarea>
           </div>
           <button>Update Product</button>

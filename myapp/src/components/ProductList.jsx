@@ -1,12 +1,49 @@
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-const ProductList = (props) => {
+import axios from "axios";
+import {
+  prRemoveProduct,
+  prSaveProductList,
+} from "../redux/ProductReducerSlice";
+const ProductList = () => {
   let navigate = useNavigate();
-  let { removeProduct, productList } = props;
+  let dispatch = useDispatch();
+  let { productList } = useSelector((state) => state.product);
+
+  let removeProduct = (id) => {
+    let isDelete = window.confirm("Are you sure delete ? ");
+    dispatch(prRemoveProduct({ isDelete, id }));
+  };
+  // let getServerList = async () => {
+  //   let url = "https://fakestoreapi.com/products";
+  //   try {
+  //     let response = await fetch(url, { method: "GET" });
+  //     // console.log(response); // collect the data from response ==> response.json()
+  //     let data = await response.json();
+  //     dispatch(prSaveProductList(data));
+  //     alert("list update successfully");
+  //   } catch (error) {
+  //     alert(error);
+  //   }
+  // };
+
+  let getServerList = async () => {
+    let url = "https://fakestoreapi.com/products";
+    try {
+      let { data } = await axios.get(url);
+      dispatch(prSaveProductList(data));
+      alert("list update successfully");
+    } catch (error) {
+      alert(error);
+    }
+  };
   return (
     <>
       {/* print product */}
       <center>
-        <h1>Product List</h1>
+        <h1>
+          Product List <button onClick={getServerList}>Get Server List</button>
+        </h1>
         <table className="table">
           <thead>
             <tr>

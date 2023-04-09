@@ -3,13 +3,17 @@ import ReactDOM from "react-dom/client"; // node_modules
 import "./index.css"; // custom file
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("edureka-react")); // react v18
 root.render(
   <React.Fragment>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.Fragment>
 );
 // render ==> inject our code to Browser DOM

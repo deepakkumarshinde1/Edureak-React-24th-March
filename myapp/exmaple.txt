@@ -100,3 +100,34 @@ hooks
     useSearchParams,
     useNavigate ==> redirect user with javascript,
  
+
+# redux 
+    # redux-toolkit
+        store => data & state
+        reducer => set of function
+            slice
+                {
+                    name:"reducer",
+                    initialState:{},
+                    reducers:{
+                        add(){},
+                        update(){}
+                    }
+                }
+        action ==> { type:'ADD' , payload:{name:'dell', prices:40000 , desc:'laptop'} }
+        dispatch ==> dispatch(action())
+
+    # react-redux
+         useSelector => get store state
+         useDispatch => dispatch(action()) --> call redux function
+         Provider => add a store to react app
+
+# HTTP Methods 
+    GET ==> default
+    POST
+    PUT
+    DELETE
+    PATCH
+    COPY
+    HEAD
+
