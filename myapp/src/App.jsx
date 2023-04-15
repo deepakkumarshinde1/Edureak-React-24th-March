@@ -1,9 +1,9 @@
-import Product from "./components/Product";
+import WeatherApp from "./components/WeatherApp";
 
 let App = () => {
   return (
     <>
-      <Product />
+      <WeatherApp />
     </>
   );
 };

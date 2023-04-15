@@ -132,3 +132,10 @@ hooks
     COPY
     HEAD
 
+
+# redux saga 
+    call => call api
+    put ==> call redux action to update record
+    takeLatest => take a latest request 
+    takeEvery => call multiple request of same call
+    all ==> call api at a time
