@@ -2,11 +2,14 @@ import React from "react"; // node_modules
 import ReactDOM from "react-dom/client"; // node_modules
 import "./index.css"; // custom file
 import App from "./App";
+import { WeatherContextProvider } from "./context/WeatherContext";
 
 const root = ReactDOM.createRoot(document.getElementById("edureka-react")); // react v18
 root.render(
   <React.Fragment>
-    <App />
+    <WeatherContextProvider>
+      <App />
+    </WeatherContextProvider>
   </React.Fragment>
 );
 // render ==> inject our code to Browser DOM

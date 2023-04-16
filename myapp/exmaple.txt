@@ -1,4 +1,5 @@
 https://github.com/deepakkumarshinde1/Edureak-React-24th-March
+https://medium.com/in-the-weeds/an-intro-to-advanced-react-hooks-a8af6397fe28
 # states and props
 # lifecycle in react
 # forms (product mang)
@@ -139,3 +140,31 @@ hooks
     takeLatest => take a latest request 
     takeEvery => call multiple request of same call
     all ==> call api at a time
+
+
+# Hooks
+    Hooks are use only in function component
+    Hooks can perform complex operation 
+    # useState => state in function 
+    # useEffect => when side effect in component happened (state)
+    Hooks can't inside a class component 
+    # useContext => state sharing for small application
+        # useContext & Redux ==> it is not recommended to them together
+        # 3 PART context use
+            # create a context ==> createContext()
+            # set a context provider ==> component which return Context.Provider
+            # use that context ==> custom hook for reusability
+        # Set provider component to index.js
+    # useReducer ==> combine state,
+    useRef 
+        ==> reference to real dom element ,
+        ==> all jsx element has ref={} prop
+        ==> user defined component are not having ref prop
+    useMemo,
+    useCallback,
+    useLayoutEffect *,
+    useImperativeHandle *
+
+# props drilling ==> When we pass function , string , boolean etc from parent to child 
+# small application and want to create logic for state sharing like redux ==> useContext
+

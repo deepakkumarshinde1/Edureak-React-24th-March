@@ -1,9 +1,9 @@
-import WeatherApp from "./components/WeatherApp";
+import MoreHooks from "./components/MoreHooks";
 
 let App = () => {
   return (
     <>
-      <WeatherApp />
+      <MoreHooks />
     </>
   );
 };
