@@ -184,6 +184,20 @@ hooks
     How to consume ==> GraphQL Response (CLient)
 
     Build The Server
-        
-# testing
+        node JS
+            express (framework)
+                graphQL (graphql HTTP Client)
+                    schema (structure)
+                        query
+                            ==> read data
+                            rootQuery => 
+                        mutation (change)
+                            ==> add , update , delete
 
+        express 4.17.0
+        graphql 14.3.0
+        express-graphQL 0.8.0
+        cors (4444) (3000)
+        nodemon (restart on change)
+
+        https://www.mockaroo.com/ ===> get/ gen dummy data
